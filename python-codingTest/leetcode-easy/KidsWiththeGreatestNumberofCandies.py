@@ -1,6 +1,3 @@
-# Input: candies = [2,3,5,1,3], extraCandies = 3
-# Output: [true,true,true,false,true] 
-
 # Test
 candies = [2,3,5,1,3] #Input
 extraCandies = 3 #Input
@@ -9,6 +6,14 @@ TrueorFalse=[]
 for i in candies:
     TrueorFalse.append(i+extraCandies>=maxcandies)
 print(TrueorFalse) #Output
+
+# class Solution:
+#     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+#         maxcandies = max(candies)
+#         TrueorFalse=[]
+#         for i in candies:
+#             TrueorFalse.append(i+extraCandies>=maxcandies)
+#         return TrueorFalse
 
 # Problem Analysis
 # 1. find a child who have a lot of candies
