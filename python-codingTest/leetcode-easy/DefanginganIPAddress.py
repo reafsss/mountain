@@ -1,5 +1,4 @@
 # Test
-
 address = "1.1.1.1" #Input
 address.replace('.', '[.]') #Output
 
