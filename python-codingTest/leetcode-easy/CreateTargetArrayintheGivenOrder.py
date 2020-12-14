@@ -1,3 +1,4 @@
+
 # Test
 nums = [0,1,2,3,4] #Input
 index = [0,1,2,2,1] #Input
