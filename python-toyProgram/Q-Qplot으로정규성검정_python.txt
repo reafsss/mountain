@@ -1,0 +1,54 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import ndtri
+
+df = pd.read_excel("D:\\김덕성\\대학공부\\3학년 2학기\\실험계획법_이기천교수님\\과제\\HW1\\test3.xlsx")
+df.head()
+
+        data
+0   4.601504
+1  10.354300
+2   0.030012
+3  14.953439
+4   4.270191
+
+df=df.sort_values(by=['data'], ascending = True).reset_index()
+df.head()
+
+   index      data
+0    874  0.005223
+1    142  0.024426
+2      2  0.030012
+3    380  0.031548
+4     89  0.038513
+
+df['count'] = df.index +1
+df.head()
+
+   index      data  count
+0    874  0.005223      1
+1    142  0.024426      2
+2      2  0.030012      3
+3    380  0.031548      4
+4     89  0.038513      5
+
+n_rows = df.shape[0]
+df['percentile_area'] = ((df['count'])-0.5)/n_rows
+df['z_theoritical']=ndtri(df['percentile_area'])
+df['z_actual'] = (df['data'] -df['data'].mean())/df['data'].std(ddof=0)
+df.head()
+
+   index      data  count  percentile_area  z_theoritical  z_actual
+0    874  0.005223      1            0.001      -3.090232 -0.976158
+1    142  0.024426      2            0.002      -2.878162 -0.974216
+2      2  0.030012      3            0.003      -2.747781 -0.973651
+3    380  0.031548      4            0.004      -2.652070 -0.973496
+4     89  0.038513      5            0.005      -2.575829 -0.972791
+
+plt.scatter(df.z_actual, df.z_theoritical)
+plt.plot([-2,-1,0,1,2],[-2,-1,0,1,2])
+plt.show()
+plt.scatter(df.z_theoritical, df.z_theoritical)
+plt.plot([-3,-2,-1,0,1,2,3,4,5,6],[-3,-2,-1,0,1,2,3,4,5,6])
+plt.show()
