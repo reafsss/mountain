@@ -19,4 +19,6 @@
 -> 변경사항을 git에 업로드 했을때 나에게나 다른 팀원에게 알려주는 commit
 
 9. git push origin +master
--> 실제로 git에 Push를 요청 넵
+-> 실제로 git에 Push를 요청
+
+Local
