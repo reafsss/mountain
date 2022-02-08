@@ -52,3 +52,5 @@ plt.show()
 plt.scatter(df.z_theoritical, df.z_theoritical)
 plt.plot([-3,-2,-1,0,1,2,3,4,5,6],[-3,-2,-1,0,1,2,3,4,5,6])
 plt.show()
+
+hi hello
